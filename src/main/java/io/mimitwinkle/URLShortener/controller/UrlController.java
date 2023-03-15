@@ -1,5 +1,6 @@
 package io.mimitwinkle.URLShortener.controller;
 
+import io.mimitwinkle.URLShortener.model.Url;
 import io.mimitwinkle.URLShortener.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class UrlController {
     }
 
     @PostMapping
-    public String generateShortUrl(@RequestBody String url) {
-        return urlService.generateShortUrl();
+    public Url generateShortUrl(@RequestBody String url) {
+        return urlService.generateShortUrl(url);
     }
 }
